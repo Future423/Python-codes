@@ -1,3 +1,4 @@
+#armstrom number
 n=int(input("enter any number:"))
 m=n
 f=0
