@@ -1,4 +1,6 @@
+#This is an amazing program
 #importing modules
+
 import wikipedia
 #first you have to install wikipedia module as it is not in-built
 import warnings
