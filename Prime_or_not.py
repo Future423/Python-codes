@@ -1,3 +1,5 @@
+#This code take a intiger as input and check the input is a prime number or not 
+
 a=int(input("Enter any number :"))
 f=0
 i=2
