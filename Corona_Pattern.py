@@ -1,4 +1,8 @@
+#Python code for a vibrant circle
+#Corona like Pattern
+
 import turtle
+
 t=turtle.Turtle()
 s=turtle.Screen()
 s.bgcolor("black")
@@ -8,6 +12,7 @@ t.speed(0)
 t.penup()
 t.goto(0,200)
 t.pendown()
+
 while True :
     t.forward(a)
     t.right(b)
@@ -15,5 +20,6 @@ while True :
     b+=1
     if b==210:
         break
+        
 t.hideturtle()
 turtle.done()
