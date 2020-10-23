@@ -9,7 +9,7 @@ import warnings
 #this module hide warning from module, if occurs
 
 # initializing a function
-def mywiki(a):
+def WikipediaSearch(a):
     
     #try and except hideing errors, if occurs
     try:
