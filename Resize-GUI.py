@@ -1,3 +1,6 @@
+#This python code create a Tkinter GUI and take height and width as input
+#And then resize the GUI on the bases of the input
+
 from tkinter import *
 
 root = Tk()
