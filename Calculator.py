@@ -92,6 +92,5 @@ class Calculator:
 root = Tk()
 root.minsize(349,330)
 root.maxsize(349,330)
-root.wm_iconbitmap(r"C:\Users\TOSHIBA\Documents\Nishu\pics\fav\logos\+-.ico")
 my_gui = Calculator(root)
 root.mainloop()
