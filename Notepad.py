@@ -10,7 +10,6 @@ def newFile():
     file = None
     TextArea.delete(1.0, END)
 
-
 def openFile():
     global file
     file = askopenfilename(defaultextension=".txt",
@@ -23,7 +22,6 @@ def openFile():
         f = open(file, "r")
         TextArea.insert(1.0, f.read())
         f.close()
-
 
 def saveFile():
     global file
@@ -47,7 +45,6 @@ def saveFile():
         f = open(file, "w")
         f.write(TextArea.get(1.0, END))
         f.close()
-
 
 def quitApp():
     root.destroy()
@@ -105,7 +102,6 @@ if __name__ == '__main__':
     MenuBar.add_cascade(label="Edit", menu = EditMenu)
 
     # Edit Menu Ends
-
     # Help Menu Starts
     HelpMenu = Menu(MenuBar, tearoff=0)
     HelpMenu.add_command(label = "About Notepad", command=about)
