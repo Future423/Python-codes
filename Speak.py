@@ -8,7 +8,8 @@ engine = pyttsx3.init('sapi5')
 rate = engine.getProperty('rate')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[5].id)
-#may be your Pc have many voices choose one out of them in "voices[<>]"
+#may be you have many voices inn your Pc, choose one out of them in "voices[<>]"
+#Example-<engine.setProperty('voice', voices[0].id)>
 
 engine.setProperty('rate', 125)
 #rate is speed of speaking, you can change it
