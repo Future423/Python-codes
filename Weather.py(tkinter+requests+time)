@@ -3,7 +3,7 @@ import requests
 import time
  
 
-def getWeather(canvas):
+def myWeather(root):
     city = textField.get()
     api = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=06c921750b9a82d8f5d1294e1586276f"
     
@@ -20,23 +20,23 @@ def getWeather(canvas):
 
     final_info = condition + "\n" + str(temp) + "°C" 
     final_data = "\n"+ "Min Temp: " + str(min_temp) + "°C" + "\n" + "Max Temp: " + str(max_temp) + "°C" +"\n" + "Pressure: " + str(pressure) + "\n" +"Humidity: " + str(humidity) + "\n" +"Wind Speed: " + str(wind) + "\n" + "Sunrise: " + sunrise + "\n" + "Sunset: " + sunset
-    label1.config(text = final_info)
-    label2.config(text = final_data)
+    l1.config(text = final_info)
+    l2.config(text = final_data)
 
-canvas = tk.Tk()
-canvas.geometry("500x550")
-canvas.title("Weather Window")
-canvas.configure(background="light cyan")
+root = tk.Tk()
+root.geometry("500x550")
+root.title("Weather Window")
+root.configure(background="light cyan")
 f = ("Bradley Hand ITC",20, "bold")
 t = ("Baskerville Old Face", 35)
 
 textField = tk.Entry(canvas, justify='center', width = 20, font = t)
 textField.pack(pady = 20)
 textField.focus()
-textField.bind('<Return>', getWeather)
+textField.bind('<Return>', myWeather)
 
-label1 = tk.Label(canvas, font=t,bg='light cyan')
-label1.pack()
-label2 = tk.Label(canvas,bg='light cyan', font=f)
-label2.pack()
-canvas.mainloop()
+l1 = tk.Label(root, font=t,bg='light cyan')
+l1.pack()
+l2 = tk.Label(root,bg='light cyan', font=f)
+l2.pack()
+root.mainloop()
