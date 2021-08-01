@@ -7,8 +7,7 @@ def tris():
     global lang
     try:
         t=googletrans.Translator()
-        translated=t.translate(text=text1.get(1.0, END),
-                               src = com1.get(),dest = com2.get())
+        translated=t.translate(text=text1.get(1.0, END),src = com1.get(),dest = com2.get())
         text2.delete(1.0, END)
         text2.insert(END, translated.text)        
 
@@ -19,11 +18,10 @@ def tris():
 root=Tk()
 root.minsize(1200,500)
 root.maxsize(1200,500)
-root.wm_iconbitmap("Firstfear.ico")
+#root.wm_iconbitmap("Firstfear.ico") #"file name +.ico"
 root.title('Translator by Nishnat')
 root.configure(background="SlateBlue4")
-l1=Label(root,text='Python Project - Language Translator',bg='SlateBlue4'
-         ,fg='white',padx=3,pady=10, font='ArialRoundedMTBold 30 bold')
+l1=Label(root,text='Python Project - Language Translator',bg='SlateBlue4',fg='white',padx=3,pady=10, font='ArialRoundedMTBold 30 bold')
 l1.pack()
 
 mnfrm=Frame(root,bg='gainsboro')
@@ -39,8 +37,7 @@ com1.set("english")
 
 f=Frame(root)
 f.place(x=50,y=200,width=440,height=210)
-text1=Text(f,font="CouriesNew 24",bg="white",
-           relief=GROOVE, wrap=WORD,borderwidth=3)
+text1=Text(f,font="CouriesNew 24",bg="white",relief=GROOVE, wrap=WORD,borderwidth=3)
 text1.place(x=0,y=0,width=440,height=210)
 scr=Scrollbar(f)
 scr.pack(side='right',fill='y')
@@ -53,8 +50,7 @@ com2.set("Select Language")
 
 f1=Frame(root)
 f1.place(x=700,y=200,width=440,height=210)
-text2=Text(f1,font="CouriesNew 24",bg="white",
-           relief=GROOVE, wrap=WORD,borderwidth=3)
+text2=Text(f1,font="CouriesNew 24",bg="white",relief=GROOVE, wrap=WORD,borderwidth=3)
 text2.place(x=0,y=0,width=440,height=210)
 scr1=Scrollbar(f1)
 scr1.pack(side='right',fill='y')
@@ -72,9 +68,9 @@ fie=("Baskerville Old Face", 35)
 hed=Label(root,text ="Language Translator", font = fie, bg ='gainsboro')
 hed.place(x=420,y=90)
 
-imag=PhotoImage(file="nishu.png")
-imglab=Label(mnfrm,image=imag,width=193,height=150)
-imglab.place(x=475,y=220)
+#imag=PhotoImage(file="long.png") #"file name +.png"
+#imglab=Label(mnfrm,image=imag,width=193,height=150)
+#imglab.place(x=475,y=220)
 
 root.mainloop()
 
