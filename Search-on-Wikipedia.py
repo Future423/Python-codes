@@ -1,4 +1,3 @@
-#This is an amazing program
 #importing modules
 
 import wikipedia
