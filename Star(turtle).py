@@ -11,7 +11,8 @@ t.hideturtle()
 
 t.speed(0)
 #setting speed <max speed>
-
+1
+#for loop for star 
 for i in range(500):
     t.forward(i)
     t.right(144)
