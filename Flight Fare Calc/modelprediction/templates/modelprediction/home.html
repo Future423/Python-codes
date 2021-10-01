@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Flight Fare</title>
+    <link rel="icon" type="image/png" href="{% static 'modelprediction/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body style="background-color:black">
+    <!-- <div class="px-3 py-3"> -->
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#" style="display: inline;">
+            <i class="fa fa-fighter-jet" aria-hidden=""></i>
+            <span class="align-baseline"><ion-icon name="calendar-outline" role="img" class="md hydrated" aria-label="calendar outline"></ion-icon> Airline Price Prediction</span>
+        </a>
+
+
+        <div class="text-right">
+            <a href="https://github.com/Shivang-Agarwal11/ML-Deep-Learning/tree/main/ML/flightFlare" class="btn btn-info" role="button" target="new">Model Working</a>
+
+        </div>
+
+
+    </nav>
+    <span class="border border-dark">
+    <div class="mx-auto" style="width: 200px;">
+        <span class="d-block p-2 bg text-white"><h1>PREDICTIONS</h1></span>
+    </div>
+    </span>
+
+    <form action="{% url 'result' %}">
+        <div class="form-group">
+            <p>
+                <h3 class="text-white">AIRLINE COMPANY</h3>
+            </p>
+            <select class="custom-select custom-select-sm font-weight-bold " name='company'>
+                <option selected class="font-weight-normal" value="GoAir">GoAir</option>
+                <option value="Air India" class="font-weight-normal">Air India</option>
+                <option value="IndiGo" class="font-weight-normal">IndiGo</option>
+                <option value="Jet Airways" class="font-weight-normal">Jet Airways</option>
+                <option value="SpiceJet" class="font-weight-normal">SpiceJet</option>
+                <option value="Trujet" class="font-weight-normal">Trujet</option>
+                <option value="Vistara" class="font-weight-normal">Vistara</option>
+
+              </select>
+        </div>
+        <div class="form-group">
+            <p>
+                <h3 class="text-white">SOURCE CITY/AIRPORT</h3>
+            </p>
+            <select class="custom-select custom-select-sm font-weight-bold" name="source">
+                <option selected class="font-weight-normal" value="Chennai">Chennai</option>
+                <option value="Delhi" class="font-weight-normal">Delhi</option>
+                <option value="Kolkata" class="font-weight-normal">Kolkata</option>
+                <option value="Mumbai" class="font-weight-normal">Mumbai</option>
+
+              </select>
+        </div>
+        <div class="form-group ">
+            <p>
+                <h3 class="text-white">DESTINATION CITY/AIRPORT</h3>
+            </p>
+            <select class="custom-select custom-select-sm font-weight-bold" name="destination">
+                <option selected class="font-weight-normal" value="Delhi">Delhi</option>
+                <option value="Cochin" class="font-weight-normal">Cochin</option>
+                <option value="Hyderabad" class="font-weight-normal">Hyderabad</option>
+                <option value="Kolkata" class="font-weight-normal">Kolkata</option>
+
+              </select>
+        </div>
+        <div class="form-group ">
+            <p>
+                <h3 class="text-white">NUMBER OF STOPS</h3>
+            </p>
+            <select class="custom-select custom-select-sm font-weight-bold" name="stops">
+                <option selected class="font-weight-normal" value="0">0</option>
+                <option value="1" class="font-weight-normal">1</option>
+                <option value="2" class="font-weight-normal">2</option>
+                <option value="3" class="font-weight-normal">3</option>
+                <option value="4" class="font-weight-normal">4</option>
+
+              </select>
+        </div>
+        <div class="form-group">
+            <p>
+                <h3 class="text-white">DATE OF JOURNEY</h3>
+            </p>
+            <input type="date" class="form-control" name="datej" required>
+        </div>
+        <div class="form-group">
+            <p>
+                <h3 class="text-white">ARRIVAL TIME</h3>
+            </p>
+            <input type="time" class="form-control" name="arrival" required>
+        </div>
+        <div class="form-group">
+            <p>
+                <h3 class="text-white">DEPARTURE TIME</h3>
+            </p>
+            <input type="time" class="form-control" name="departure" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">PREDICT</button>
+    </form>
+</body>
+
+</html>

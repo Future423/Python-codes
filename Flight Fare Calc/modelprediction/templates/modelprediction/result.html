@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Flight Fare</title>
+    <link rel="icon" type="image/png" href="{% static 'modelprediction/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body style="background-color:black">
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#" style="display: inline;">
+            <i class="fa fa-fighter-jet" aria-hidden=""></i>
+            <span class="align-baseline"><ion-icon name="calendar-outline" role="img" class="md hydrated" aria-label="calendar outline"></ion-icon> Airline Price Prediction</span>
+        </a>
+
+
+        <div class="text-right">
+            <a href="https://github.com/Shivang-Agarwal11/ML-Deep-Learning/tree/main/ML/flightFlare" class="btn btn-info" role="button" target="new">Model Working</a>
+
+        </div>
+
+
+    </nav>
+    <span>
+    <div class="mx-auto" style="width: 200px;">
+        <span class="d-block p-2 bg text-white "><h1>PREDICTIONS</h1></span>
+    </div>
+    </span>
+    <div style="float:left; width:40%;">
+        <form action="{% url 'result' %}">
+            <div class="form-group">
+                <p>
+                    <h3 class="text-white">AIRLINE COMPANY :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ company }}</h4>
+
+
+            </div>
+            <div class="form-group">
+                <p>
+                    <h3 class="text-white">SOURCE CITY/AIRPORT :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ source }}</h4>
+            </div>
+            <div class="form-group ">
+                <p>
+                    <h3 class="text-white">DESTINATION CITY/AIRPORT :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ destination }}</h4>
+            </div>
+            <div class="form-group ">
+                <p>
+                    <h3 class="text-white">NUMBER OF STOPS :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ stops }}</h4>
+            </div>
+            <div class="form-group">
+                <p>
+                    <h3 class="text-white">DATE OF JOURNEY :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ datej }}</h4>
+            </div>
+            <div class="form-group">
+                <p>
+                    <h3 class="text-white">ARRIVAL TIME :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ arrival }}</h4>
+            </div>
+            <div class="form-group">
+                <p>
+                    <h3 class="text-white">DEPARTURE TIME :</h3>
+                </p>
+                <h4 class="font-weight-bold text-white text-nowrap">{{ departure }}</h4>
+            </div>
+
+        </form>
+    </div>
+    <div style="float:left; width: 50%;">
+        <p>
+            <h1 class='text-white'>Predicted flight fare is: &#8377;{{ actual }}</h1>
+        </p>
+    </div>
+
+    <div class="container">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <script type="text/javascript">
+            var xValues = ['GoAir', 'Jet Airways', 'Air India', 'Vistara', 'Trujet', 'IndiGo', 'Spicejet']
+            var yValues = ["{{Airline_GoAir}}", "{{Airline_JetAirways}}", "{{Airline_AirIndia}}", "{{Airline_Vistara}}", "{{Airline_Trujet}}", "{{Airline_IndiGo}}", "{{Airline_SpiceJet}}"];
+            var max_val = "{{max_val}}"
+
+            new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        fill: false,
+                        lineTension: 0,
+                        backgroundColor: "rgba(0,0,255,1.0)",
+                        borderColor: "rgba(0,0,255,0.7)",
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: "Other Airline Prices for the Same Route",
+                        fontColor: "rgba(159,170,174,1)",
+                        fontSize: 18,
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(159,170,174,0.9)",
+                                min: 1500,
+                                max: parseInt(max_val) + 500,
+                                fontSize: 14,
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "rgba(159,170,174,0.9)",
+                                fontSize: 14,
+                            }
+                        }],
+                    }
+                }
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>
