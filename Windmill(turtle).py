@@ -1,16 +1,16 @@
-import turtle as t
+from turtle import *
 
-t.speed(0)#max speed
+speed(0)#max speed
 
-t.bgcolor("black")#Baackground color
-t.pencolor("red")#Pen colour
+bgcolor("black")#Baackground color
+pencolor("red")#Pen colour
 
 for i in range(190):
-    t.left(30)
-    t.forward(i)
-    t.right(120)
-    t.forward(i)
-    t.right(120)
-    t.forward(i)
-    t.right(90)
-    t.forward(i)
+    left(30)
+    forward(i)
+    right(120)
+    forward(i)
+    right(120)
+    forward(i)
+    right(90)
+    forward(i)
