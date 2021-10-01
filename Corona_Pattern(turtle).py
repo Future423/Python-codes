@@ -1,10 +1,10 @@
 #Python code for a vibrant circle
 #Corona like Pattern
 
-import turtle
+from turtle import *
 
-t=turtle.Turtle()
-s=turtle.Screen()
+t=Turtle()
+s=Screen()
 s.bgcolor("black")
 t.pencolor("cyan")
 a,b=0,0
@@ -22,4 +22,4 @@ while True :
         break
         
 t.hideturtle()
-turtle.done()
+done()
