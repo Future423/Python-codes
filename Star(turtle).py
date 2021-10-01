@@ -9,9 +9,9 @@ t.color("red")
 t.hideturtle()
 #hiding turtle
 
-t.speed(0)
-#setting speed <max speed>
-1
+t.speed(3)
+#setting speed <max speed is 0>
+
 #for loop for star 
 for i in range(500):
     t.forward(i)
