@@ -1,11 +1,11 @@
-import turtle
+from turtle import *
 
-turtle.bgcolor("black")
-turtle.speed(0)
+bgcolor("black")
+speed(0)
 for i in range(8):
     for col in ('red','cyan','white','magenta','yellow'):
-        turtle.color(col)
-        turtle.circle(100)
-        turtle.right(10)
+        color(col)
+        circle(100)
+        right(10)
         
-turtle.hideturtle()
+hideturtle()
