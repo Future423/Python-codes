@@ -1,7 +1,8 @@
 print("Hey there")
 input()
-print("let's play a game")
-input()
+a=input("want to play a game")
+if a.lower()=='no':
+  exit()
 print("think about a number between 0-20, for easy calculation")
 input()
 print("do calculations in your mind, don't tell to me")
