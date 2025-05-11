@@ -3,6 +3,53 @@ import os
 from flask import Flask, render_template_string, request
 
 openai.api_key = "wmwmwmwmwmwmmwwmmwmw" #replace this with your api key
+#Generate your API key by
+
+"""
+===========================
+📚 How to Get Your OpenAI API Key
+===========================
+
+Step 1: Create/Open OpenAI Account
+----------------------------------
+1. Go to https://platform.openai.com/
+2. Click "Sign Up" (or "Log In" if you already have an account).
+3. Complete email and phone verification if needed.
+
+Step 2: Access API Keys
+-----------------------
+1. After login, click on your profile icon (top-right corner).
+2. Click "View API Keys" from the dropdown.
+   OR go directly to: https://platform.openai.com/api-keys
+
+Step 3: Create New API Key
+--------------------------
+1. Click the "+ Create new secret key" button.
+2. (Optional) Give your key a name like "My App".
+3. Click "Create secret key".
+4. ✅ COPY the API key and save it — you won't see it again!
+
+Step 4: Add API Key to This Code
+--------------------------------
+1. In this file, find this line:
+   openai.api_key = "REPLACE_THIS_WITH_YOUR_API_KEY"
+
+2. Replace it with your actual API key:
+   openai.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+Step 5: Run the Code
+--------------------
+- Save the file.
+- Run it using: python your_script.py
+- Your browser will open with the Image Generator site!
+
+===========================
+⚠️ Important Notes:
+- NEVER share your API key publicly.
+- OpenAI gives free credits when you sign up, but after that, usage is paid.
+- Check your usage here: https://platform.openai.com/account/usage
+===========================
+"""
 
 def generate_tutorial(components):
   response = openai.Images.create(
